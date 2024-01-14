@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+input {
+    height: 5vh;
+    width: 50vw;
+    background: #e8f4fffc;
+    border: 1px solid #6495ed;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+input:focus-visible {
+    border: 2px solid #6495ed;
+    outline: none;
+}
