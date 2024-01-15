@@ -1,1 +1,1 @@
-export type IInputType = "text" | "number" | "date"
+export type IInputType = "text" | "number" | "date" | "checkbox" | "color" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "button" | "tel" | "time" | "url" | "week"

@@ -1,3 +1,4 @@
-<input #input supermanInput type="text">
-<input #input supermanInput type="number">
-<input #input supermanInput type="date">
+<div class="d-flex flex-column m-t-2">
+    <strong>{{label}}</strong>
+    <input name="dynamic-input" #input supermanInput [type]="type">
+</div>
