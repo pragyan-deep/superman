@@ -6,13 +6,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 input {
     height: 5vh;
     width: 50vw;
-    background: #e8f4fffc;
-    border: 1px solid #6495ed;
+    background: white;
+    border: 1px solid gray;
     border-radius: 5px;
     margin: 2px;
 }
 
 input:focus-visible {
-    border: 2px solid #6495ed;
+    border: 1px solid black;
     outline: none;
+}
+
+button {
+    border: none;
+    height: 40px;
+    background-color: lightgrey;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-14 {
+    font-size: 14px;
 }

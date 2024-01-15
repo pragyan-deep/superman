@@ -14,10 +14,10 @@ import { CommonModule } from '@angular/common';
   ],
   template: `
     <div class="d-flex flex-column m-t-2">
-      <strong>{{ label }}</strong>
+      <span class="font-12">{{ label }}</span>
       <input name="dynamic-input" #input supermanInput [type]="type" />
     </div>
-  `,
+  `,  
 })
 export class InputComponent {
   @Input({ required: true }) type: IInputType = 'text';
