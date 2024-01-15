@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { InputComponent } from '../shared/components/input/input.component';
-import { RangeComponent } from '../shared/components/range/range.component';
-import { IInputType } from '../../types/input';
-import { CommonModule } from '@angular/common';
+import { NgFor, TitleCasePipe } from '@angular/common';
 import { inputs } from '../../../utils/inputs';
 
 @Component({
   selector: 'superman-form',
   standalone: true,
-  imports: [InputComponent, RangeComponent, CommonModule],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  imports: [InputComponent, TitleCasePipe, NgFor],
+  template: `<ng-container *ngFor="let input of inputTypes">
+    <superman-input
+      [type]="input.type"
+      [label]="input.type | titlecase"
+    ></superman-input>
+  </ng-container>`,
 })
 export class FormComponent {
-  inputTypes = inputs
+  inputTypes = inputs;
 }

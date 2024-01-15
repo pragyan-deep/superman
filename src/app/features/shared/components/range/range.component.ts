@@ -6,9 +6,13 @@ import { IInputType } from '../../../../types/input';
   selector: 'superman-range',
   standalone: true,
   imports: [InputComponent],
-  templateUrl: './range.component.html',
-  styleUrl: './range.component.scss'
+  template: `
+    <div class="d-flex flex-row">
+      <superman-input [type]="type" label="From"></superman-input>
+      <superman-input [type]="type" label="To"></superman-input>
+    </div>
+  `,
 })
 export class RangeComponent {
-  @Input({required: true}) type: IInputType = "text";
+  @Input({ required: true }) type: IInputType = 'text';
 }
