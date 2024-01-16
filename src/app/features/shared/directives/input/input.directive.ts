@@ -11,8 +11,12 @@ export class InputDirective {
 
   @Input({required: true}) set type (type: string) {
     if(!type) return;
-    console.log(this.elRef)
     this.renderer.setAttribute(this.elRef.nativeElement, "type", type)
+  };
+
+  @Input() set formControlName (formControlName: string | undefined) {
+    if(!formControlName) return;
+    this.renderer.setAttribute(this.elRef.nativeElement, "formControlName", formControlName)
   };
 
 }

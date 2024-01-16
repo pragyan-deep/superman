@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'superman-button',
@@ -10,4 +10,9 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
   @Input() name: string = "Submit"
   @Input() class: string = ""
+  @Output() onClick: EventEmitter<Event> = new EventEmitter();
+
+  onButtonClick(event: Event){
+    this.onClick.emit(event)
+  }
 }
