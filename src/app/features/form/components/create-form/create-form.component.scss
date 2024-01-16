@@ -1,6 +1,18 @@
-.stage {
+.block {
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+}
+
+.form {
+    background-color: rgba(248, 248, 255, 0.5215686275);
+}
+
+.stage {
+    background-color: #6c757d;
+}
+
+.input {
+    background-color: #f8f8ff85;
 }
