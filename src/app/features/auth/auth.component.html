@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="form">
+        <form [formGroup]="signupForm">
+            <!-- <superman-input type="text" label="Name" [control]="signupForm.controls.name"></superman-input> -->
+            <superman-input type="email" label="Email" [control]="signupForm.controls.email"></superman-input>
+            <superman-input type="password" label="Password" [control]="signupForm.controls.password"></superman-input>
+            <superman-button name="Sign up" (onClick)="signUp()" class="w-100"></superman-button>
+        </form>
+    </div>
+</div>

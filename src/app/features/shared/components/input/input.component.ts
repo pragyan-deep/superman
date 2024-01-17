@@ -29,8 +29,8 @@ import { InputType } from '../../../../dummy-data/input';
       <span class="font-12">{{ label }}</span>
       <ng-container [ngSwitch]="type">
         <ng-container *ngSwitchCase="'dropdown'">
-          <select name="cars" id="cars">
-            <option *ngFor="let type of inputTypes" [value]="type.id">{{type.name | titlecase }}</option>
+          <select name="cars" id="cars" [formControl]="control">
+            <option *ngFor="let type of inputTypes" [value]="type.id" >{{type.name | titlecase }}</option>
           </select>
         </ng-container>
         <ng-container *ngSwitchDefault>
