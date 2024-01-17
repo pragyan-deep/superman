@@ -49,7 +49,11 @@ export class CreateFormComponent {
     stages: new FormArray<FormGroup<TStage>>([]),
   });
 
+<<<<<<< HEAD
   //TODO: Make accordion for stages.
+=======
+  //TODO: Make accordion for stages
+>>>>>>> 2f66ee979491ee9c5d0b8d2a45122244662b17f4
   get nameControl() {
     return this.form.controls.name;
   }
