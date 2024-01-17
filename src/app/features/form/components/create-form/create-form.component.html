@@ -13,24 +13,22 @@
                     <pre>{{form.value | json}}</pre>
                 </div>
             </div>
-
         </ng-container>
     </form>
 </div>
 
 <ng-template #stage let-form="form">
-    <ng-container *ngIf="form.controls.stages">
-        <ng-container *ngFor="let stageForm of form.controls.stages.controls">
+    <mat-accordion class="example-headers-align" multi *ngIf="form.controls.stages">
+        <superman-accordion *ngFor="let stageForm of form.controls.stages.controls" [title]="stageForm.controls.name.value">
             <div class="block stage">
-                <superman-input type="text" label="Stage Name"
-                    [control]="stageForm.controls.name"></superman-input>
+                <superman-input type="text" label="Stage Name" [control]="stageForm.controls.name"></superman-input>
                 <superman-button name="Add input" (onClick)="initializeNewInput(stageForm)">
                     <img src="../../../../../assets/add.svg" alt="Add icon" srcset="">
                 </superman-button>
                 <ng-container *ngTemplateOutlet="input; context: {stageForm}"></ng-container>
             </div>
-        </ng-container>
-    </ng-container>
+        </superman-accordion>
+    </mat-accordion>
 </ng-template>
 
 
@@ -41,7 +39,7 @@
                 <superman-input type="text" label="Input Name" [control]="inputForm.controls.name"></superman-input>
             </div>
             <div class="col-6">
-                <superman-input type="text" label="Input Type" [control]="inputForm.controls.type"></superman-input>
+                <superman-input type="dropdown" label="Input Type" [control]="inputForm.controls.type" ></superman-input>
             </div>
         </div>
     </ng-container>

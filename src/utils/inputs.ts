@@ -1,8 +1,8 @@
-import { IInputType } from "../app/types/input";
+import { TInputType } from "../app/types/input";
 
 export const inputs: Array<{
     id: number;
-    type: IInputType
+    type: TInputType
 }> = [
   { id: 1, type: 'text' },
   { id: 2, type: 'number' },

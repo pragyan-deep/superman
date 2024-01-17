@@ -17,6 +17,20 @@ input:focus-visible {
     outline: none;
 }
 
+select {
+    height: 5vh;
+    width: 100%;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+select:focus-visible {
+    border: 1px solid black;
+    outline: none;
+}
+
 button {
     border: none;
     height: 40px;
