@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { InputComponent } from '../shared/components/input/input.component';
 import { ButtonComponent } from '../shared/components/button/button.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { createUser } from '../../../../supabase/auth';
+import { createUser, login } from '../../../../supabase/auth';
 
 @Component({
   selector: 'superman-auth',
@@ -27,6 +27,15 @@ export class AuthComponent {
       const password = this.signupForm.value.password
       if(!email || !password) return;
       createUser(email, password);
+    }
+  }
+
+  signIn(){
+    if(this.signupForm.valid){
+      const email = this.signupForm.value.email
+      const password = this.signupForm.value.password
+      if(!email || !password) return;
+      login(email, password);
     }
   }
 }
