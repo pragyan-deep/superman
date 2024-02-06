@@ -23,6 +23,6 @@ export const InputType: Array<IInputType> = [
     {id: 20, name: "time"},
     {id: 21, name: "url"},
     {id: 22, name: "week"},
-    {id: 23, name: "dropdown"}
+    {id: 23, name: "dropdown"},
   ]
   
