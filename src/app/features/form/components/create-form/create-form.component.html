@@ -1,46 +1,52 @@
 <div class="container m-3">
-    <form [formGroup]="form">
-        <ng-container *ngIf="form">
-            <div class="row">
-                <div class="form col-6">
-                    <superman-input type="text" label="Form Name" [control]="nameControl"></superman-input>
-                    <superman-button name="Add stage" (onClick)="initializeNewStage()">
-                        <img src="../../../../../assets/add.svg" alt="Add icon" srcset="">
-                    </superman-button>
-                    <ng-container *ngTemplateOutlet="stage; context: {form}"></ng-container>
-                </div>
-                <div class="col-6">
-                    <pre>{{form.value | json}}</pre>
-                </div>
-            </div>
-        </ng-container>
-    </form>
+  <form [formGroup]="form">
+    @if (form) {
+      <div class="row">
+        <div class="form col-6">
+          <superman-input type="text" label="Form Name" [control]="nameControl"></superman-input>
+          <superman-button name="Add stage" (onClick)="initializeNewStage()">
+            <img src="../../../../../assets/add.svg" alt="Add icon" srcset="">
+          </superman-button>
+          <ng-container *ngTemplateOutlet="stage; context: {form}"></ng-container>
+        </div>
+        <div class="col-6">
+          <pre>{{form.value | json}}</pre>
+        </div>
+      </div>
+    }
+  </form>
 </div>
 
 <ng-template #stage let-form="form">
-    <mat-accordion class="example-headers-align" multi *ngIf="form.controls.stages">
-        <superman-accordion *ngFor="let stageForm of form.controls.stages.controls" [title]="stageForm.controls.name.value">
-            <div class="block stage">
-                <superman-input type="text" label="Stage Name" [control]="stageForm.controls.name"></superman-input>
-                <superman-button name="Add input" (onClick)="initializeNewInput(stageForm)">
-                    <img src="../../../../../assets/add.svg" alt="Add icon" srcset="">
-                </superman-button>
-                <ng-container *ngTemplateOutlet="input; context: {stageForm}"></ng-container>
-            </div>
+  @if (form.controls.stages) {
+    <mat-accordion class="example-headers-align" multi>
+      @for (stageForm of form.controls.stages.controls; track stageForm) {
+        <superman-accordion [title]="stageForm.controls.name.value">
+          <div class="block stage">
+            <superman-input type="text" label="Stage Name" [control]="stageForm.controls.name"></superman-input>
+            <superman-button name="Add input" (onClick)="initializeNewInput(stageForm)">
+              <img src="../../../../../assets/add.svg" alt="Add icon" srcset="">
+            </superman-button>
+            <ng-container *ngTemplateOutlet="input; context: {stageForm}"></ng-container>
+          </div>
         </superman-accordion>
+      }
     </mat-accordion>
+  }
 </ng-template>
 
 
 <ng-template #input let-stageForm="stageForm">
-    <ng-container *ngIf="stageForm.controls.inputs">
-        <div class="row block input" *ngFor="let inputForm of stageForm.controls.inputs.controls">
-            <div class="col-6">
-                <superman-input type="text" label="Input Name" [control]="inputForm.controls.name"></superman-input>
-            </div>
-            <div class="col-6">
-                <superman-input type="dropdown" label="Input Type" [control]="inputForm.controls.type" ></superman-input>
-            </div>
+  @if (stageForm.controls.inputs) {
+    @for (inputForm of stageForm.controls.inputs.controls; track inputForm) {
+      <div class="row block input">
+        <div class="col-6">
+          <superman-input type="text" label="Input Name" [control]="inputForm.controls.name"></superman-input>
         </div>
-    </ng-container>
+        <div class="col-6">
+          <superman-input type="dropdown" label="Input Type" [control]="inputForm.controls.type" ></superman-input>
+        </div>
+      </div>
+    }
+  }
 </ng-template>

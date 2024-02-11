@@ -9,7 +9,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { JsonPipe, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { JsonPipe, NgTemplateOutlet } from '@angular/common';
 import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
 import { AccordionComponent } from '../../../shared/components/accordion/accordion.component';
 
@@ -37,12 +37,10 @@ type TInput = {
     JsonPipe,
     ReactiveFormsModule,
     FormsModule,
-    NgIf,
-    NgFor,
     NgTemplateOutlet,
     MatExpansionModule,
     AccordionComponent
-  ],
+],
   templateUrl: './create-form.component.html',
   styleUrl: './create-form.component.scss',
 })
